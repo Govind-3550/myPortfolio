@@ -1,0 +1,116 @@
+.sectionOne {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.sectionOneImg {
+    height: 100%;
+    width: 100%;
+}
+
+
+@keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-slide-in {
+    animation: fadeSlideIn 1s ease-out;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 1.5s infinite;
+  }
+
+  .timeline-line {
+    background: linear-gradient(to bottom, #60a5fa, #34d399);
+  }
+
+  .line::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    height: 2px;
+    border-bottom: 2px dashed #8e1efc;
+    margin-left: -75px;
+}
+.line {
+  height: 2px;
+  width: 50px;
+  background: #8e1efc;
+  display: block;
+  margin: 15px auto 20px;
+}
+body {
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  color: #333; /* Ensures text is readable */
+  font-family: 'Poppins', sans-serif; /* Elegant typography */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+h1, h2, h3,h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+ #downloadResume{
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#downloadResume:hover{
+  background: linear-gradient(to right, #0056b3, #003d82);
+  transform: scale(1.05);
+}
+.darkMode {
+  background: linear-gradient(to right, #007bff, #0056b3);
+}
+#openSidePanel{
+  display: none;
+}
+nav {
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+@media only screen and (max-width : 1024px) {
+  nav .darkMode{
+    display:none;
+  }
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
