@@ -4,7 +4,7 @@ const Timeline = () => {
   return (
     <motion.div
       id="Resume"
-      className=" text-gray-900 font-sans w-full px-6 lg:px-40 py-10 dark:bg-gray-800"
+      className="relative min-h-screen text-gray-900 font-sans w-full px-6 lg:px-40 py-10 dark:bg-gray-800"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

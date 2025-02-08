@@ -6,6 +6,7 @@ import "./App.css";
 import Timeline from "./Timeline";
 import Footer from "./Footer";
 import Projects from "./Projects";
+import FloatingSocials from "./FloatingSocials";
 
 function App() {
   const navebarItems = ['About','Projects','Resume','Contact'];
@@ -20,6 +21,7 @@ function App() {
     <Timeline></Timeline>
     <Contact></Contact>
     <Footer></Footer>
+    <FloatingSocials></FloatingSocials>
     </>
   )
 }

@@ -1,30 +1,27 @@
 import { motion } from "framer-motion";
+import { FaFire } from "react-icons/fa"; // Sexy Overlay Icon
 
-// Example Data with Demo Images and SVG Icons
 const projectsData = [
   {
     id: 1,
     title: "Project 1",
-    description: "A fun and creative web app.",
-    image: "https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Project+1",
+    description: "A sleek portfolio showcasing my work.",
+    image: "./src/assets/MainPortfolio.png",
     link: "#",
-    svgIcon: "M10 20v-6h5v6h3v-8h2L12 3 2 12h2v8z", // Example SVG icon path for "Link"
   },
   {
     id: 2,
     title: "Project 2",
-    description: "A sleek portfolio showcasing my work.",
-    image: "https://via.placeholder.com/600x400/33B5FF/FFFFFF?text=Project+2",
+    description: "Sample portfolio website using react and material ui",
+    image: "./src/assets/image.png",
     link: "#",
-    svgIcon: "M10 20v-6h5v6h3v-8h2L12 3 2 12h2v8z",
   },
   {
     id: 3,
     title: "Project 3",
     description: "A dynamic e-commerce store.",
-    image: "https://via.placeholder.com/600x400/4CAF50/FFFFFF?text=Project+3",
+    image: "./src/assets/ecommers.png",
     link: "#",
-    svgIcon: "M10 20v-6h5v6h3v-8h2L12 3 2 12h2v8z",
   },
 ];
 
@@ -32,11 +29,12 @@ const Projects: React.FC = () => {
   return (
     <motion.section
       id="Projects"
-      className="w-full px-6 lg:px-40 flex flex-col py-10 dark:bg-gray-800"
+      className="w-full px-6 lg:px-40 flex flex-col py-10 dark:bg-gray-900"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      {/* Section Header */}
       <div className="contactHead text-center mb-12">
         <motion.h1
           className="text-[2rem] font-bold font-sans dark:text-white"
@@ -58,47 +56,58 @@ const Projects: React.FC = () => {
         </motion.p>
       </div>
 
+      {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projectsData.map((project) => (
           <motion.div
             key={project.id}
-            className="relative bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 overflow-hidden group"
+            className="relative group overflow-hidden rounded-lg shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Glowing Border Animation with Soothing Bluish Gradient */}
-            <motion.div
-              className="absolute inset-0 border-2 border-transparent rounded-lg animate-border group-hover:border-blue-600"
-              style={{
-                background:
-                  "linear-gradient(45deg, rgba(170, 200, 255, 0.8), rgba(109, 169, 224, 0.7), rgba(77, 133, 181, 0.6), rgba(56, 119, 164, 0.5))",
-                backgroundSize: "400% 400%",
-                animation: "borderAnimation 4s ease infinite",
-              }}
-            ></motion.div>
-
             {/* Project Image */}
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-56 object-cover rounded-md"
+              className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
             />
 
-            {/* Project Content */}
-            <div className="mt-4 z-10 relative">
-              <h3 className="text-xl font-semibold text-gray-800">
+            {/* Sexy Overlay with Fire Icon */}
+            <div
+              className="absolute inset-0 bg-black/40 backdrop-blur-md 
+                flex items-center justify-center opacity-100 transition-opacity duration-500 
+                group-hover:opacity-0"
+            >
+              <FaFire className="w-12 h-12 text-white opacity-70" />
+            </div>
+
+            {/* Hover Effect: Expanding Overlay with Details */}
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center 
+                      bg-gradient-to-t from-black/90 via-black/70 to-black/40 
+                      opacity-0 backdrop-blur-sm transition-all duration-500 ease-in-out group-hover:opacity-100"
+            >
+              <h3 className="text-lg font-extrabold text-white drop-shadow-lg">
                 {project.title}
               </h3>
-              <p className="text-gray-600 mt-2">{project.description}</p>
+              <p className="text-sm text-gray-300 mt-2 px-4 text-center drop-shadow-md">
+                {project.description}
+              </p>
+
+              {/* 🚀 Pill-Shaped Glowing Button */}
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:ring-2 hover:ring-blue-300"
+                className="relative mt-4 px-6 py-2 text-white text-sm font-semibold 
+                        rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 
+                        shadow-lg transition-all duration-300 
+                        hover:scale-105 hover:shadow-xl 
+                        hover:from-cyan-400 hover:to-blue-500 
+                        dark:shadow-[0_0_15px_rgba(0,200,255,0.5)]"
               >
-                <i className="fas fa-link mr-2 text-lg"></i>
-                <span className="font-medium text-sm">View Project</span>
+                🚀 Visit Project
               </a>
             </div>
           </motion.div>

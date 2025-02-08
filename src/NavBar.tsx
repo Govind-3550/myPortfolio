@@ -9,7 +9,7 @@ interface Props {
   liName: string[];
 }
 
-function NavBar({ liName, logo }: Props) {
+function NavBar({ liName }: Props) {
   let [isScrolled, setScroll] = useState(false);
   let [isMenuOpen, setMenuOpen] = useState(false); // State to control mobile menu visibility
   let [activeSection, setActiveSection] = useState(""); // Track active section
@@ -41,16 +41,21 @@ function NavBar({ liName, logo }: Props) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.span
-          className="flex justify-start items-center gap-1 font-medium"
-          initial={{ x: -100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.6 }}
+        <div
+          className="relative flex items-center justify-center w-10 h-10 rounded-full 
+            bg-gradient-to-r from-blue-500 to-cyan-300 shadow-md 
+            dark:shadow-[0_0_10px_rgba(0,150,255,0.5)] 
+            transition-all duration-500 ease-in-out 
+            hover:scale-105 hover:shadow-lg"
         >
-          {logo}
-          <span>Govind</span>
-        </motion.span>
-        
+          <span
+            className="text-sm font-bold text-white tracking-wide 
+                      font-[cursive] italic bg-clip-text "
+          >
+            GV
+          </span>
+        </div>
+
         <ul className="hidden lg:flex justify-center space-x-8 items-center">
           {liName.map((val) => {
             return (
@@ -73,7 +78,7 @@ function NavBar({ liName, logo }: Props) {
             );
           })}
         </ul>
-        <DarkModeToggle/>
+        <DarkModeToggle />
 
         {/* <span className="flex justify-end items-center gap-1 font-medium">
           <FaRegMoon />

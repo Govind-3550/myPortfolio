@@ -57,6 +57,7 @@ const Contact = () => {
     setLoading(false);
   };
   return (
+
     <motion.div
       className="w-full px-6 lg:px-40 flex flex-col py-10 dark:bg-gray-800"
       initial={{ opacity: 0 }}
@@ -183,6 +184,7 @@ const Contact = () => {
         </motion.div>
       </div>
     </motion.div>
+
   );
 };
 
