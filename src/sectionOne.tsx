@@ -29,7 +29,7 @@ const SectionOne = ({heading , description}:prop) => {
           </div>
           <div className="sectionOneDownload ">
             <button id="downloadResume" className="resumeBtn flex items-center justify-center gap-1 opacity-[77.5%] rounded-full bg-[#eee] px-[1rem] py-2 font-sans text-sm  font-medium  transition duration-300 hover:text-blue-600">
-            <a  href="./public/Govind Bharat Vishwakarma_Resume(November_2024_Common) (1).pdf" className="flex items-center justify-center gap-1" download="Govind_Vishwakarma_resume.pdf" ><FaFileAlt />
+            <a  href="/Govind Bharat Vishwakarma_Resume(November_2024_Common) (1).pdf" className="flex items-center justify-center gap-1" download="Govind_Vishwakarma_resume.pdf" ><FaFileAlt />
             Download Resume </a>
 
             </button>
@@ -39,7 +39,7 @@ const SectionOne = ({heading , description}:prop) => {
           </div> 
       </div>
       <div className="sectionOneImg container m-auto">
-      <img src="./public/sectionOne.svg" alt="SVG Image"></img>
+      <img src="/sectionOne.svg" alt="SVG Image"></img>
       </div>
     </motion.div>
   )
