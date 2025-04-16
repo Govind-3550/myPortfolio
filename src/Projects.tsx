@@ -4,24 +4,24 @@ import { FaFire } from "react-icons/fa"; // Sexy Overlay Icon
 const projectsData = [
   {
     id: 1,
-    title: "Project 1",
+    title: "My Portfolio",
     description: "A sleek portfolio showcasing my work.",
     image: "/MainPortfolio.png",
     link: "#",
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "Sample portfolio website using react and material ui",
-    image: "/image.png",
-    link: "#",
+    title: "EsyCom",
+    description: "EsyCom – Modern eCommerce app using Next.js, React, Strapi, and PostgreSQL. Fully dynamic product management and clean UI.",
+    image: "/ecommers.png",
+    link: "https://esy-com.vercel.app/",
   },
   {
     id: 3,
-    title: "Project 3",
-    description: "A dynamic e-commerce store.",
-    image: "/ecommers.png",
-    link: "#",
+    title: "JobRinger",
+    description: "Jobringer website clone created using React JS.",
+    image: "/Jobringer.png",
+    link: "https://jobringer-self.vercel.app/",
   },
 ];
 

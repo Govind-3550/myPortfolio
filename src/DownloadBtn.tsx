@@ -21,7 +21,7 @@ const DownloadButton = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/resume.pdf"; // Make sure your file is in the public folder
-    link.download = "Govind_Resume.pdf"; // Change filename as needed
+    link.download = "https://drive.google.com/file/d/1Bx-v8MeC9HsAH6DUoUdGdu9o01IBojmo/view"; // Change filename as needed
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
